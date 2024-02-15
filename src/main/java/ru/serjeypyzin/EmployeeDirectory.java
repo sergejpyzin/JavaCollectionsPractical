@@ -6,11 +6,15 @@ package ru.serjeypyzin;
 Добавить метод, который ищет сотрудника по табельному номеру
 Добавить метод добавление нового сотрудника в справочник
 */
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
+@Getter
+@Setter
 public class EmployeeDirectory {
 
     private List<Employee> employees;
