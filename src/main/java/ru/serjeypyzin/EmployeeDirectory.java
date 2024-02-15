@@ -6,19 +6,19 @@ package ru.serjeypyzin;
 Добавить метод, который ищет сотрудника по табельному номеру
 Добавить метод добавление нового сотрудника в справочник
 */
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
+
 public class EmployeeDirectory {
 
     private List<Employee> employees;
+
+    public EmployeeDirectory(){
+        this.employees = new ArrayList<>();
+    }
+
 
     public void addedNewEmployeeToEmployeeDirectory (Employee employee){
         employees.add(employee);
@@ -43,5 +43,15 @@ public class EmployeeDirectory {
                 .map(Employee::getPhoneNumber)
                 .collect(Collectors.toList());
 
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Список содержит следующих сотрудников:\n");
+        for (Employee employee : employees) {
+            stringBuilder.append(employee.toString()).append("\n");
+        }
+        return stringBuilder.toString();
     }
 }
