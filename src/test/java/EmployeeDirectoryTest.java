@@ -16,7 +16,6 @@ public class EmployeeDirectoryTest {
     @BeforeEach
     void setUp() {
         directory = new EmployeeDirectory();
-        // Добавляем некоторых сотрудников для тестирования
         Employee employee1 = new Employee("Иванов Иван", "123456789", 5);
         Employee employee2 = new Employee("Петров Петр", "987654321", 10);
         directory.addedNewEmployeeToEmployeeDirectory(employee1);
